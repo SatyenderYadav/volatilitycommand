@@ -1,0 +1,329 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="icon" href="img/favicon.png" type="image/png">
+    <title>Volatility Command</title>
+    <style type="text/css">
+    body {
+        font-family: sans-serif;
+        background-color: #000;
+        background: url(img/bg.jpg) no-repeat center center fixed;
+        background-size: cover;
+        height: 100%;
+        color: #fff;
+    }
+
+    * {
+        box-sizing: border-box;
+
+    }
+    h1 {
+        color: #fff;
+        margin-bottom: 30px;
+    }
+    .container {
+        padding: 40px;
+        margin: 0 auto;
+        max-width: 1000px;
+        text-align: center;
+
+    }
+
+    #commandList {
+        padding-inline-start: 0;
+        display: block;
+    }
+    .custom-tooltip {
+    display: none;
+    margin-left: 40px;
+    padding: 5px 12px;
+    background-color: #000000df;
+    border-radius: 4px;
+    color: #fff;
+}
+
+    .command {
+        display: block;
+        list-style-type: none;
+        background-color: #101010;
+        border-radius: 3px;
+        padding: 1px 20px;
+        margin-bottom: 10px;
+        text-align: left;
+        box-sizing: border-box;
+        border-radius: 8px;
+        color: #fff;
+        box-shadow: -4px -4px 10px rgba(0,0, 0, 1),
+        inset 4px 4px 10px rgba(255, 255, 255, 0.05),
+        inset -4px -4px 10px rgba(0,0, 0, 1),
+        inset 4px 4px 10px rgba(255, 255, 255, 0.05);
+        opacity: 0.9;
+    }
+
+    .command > h2 {
+        margin-bottom: 0px;
+        font-family: 'Rancho', cursive;
+        letter-spacing: 3px;
+    }
+
+    .command > p {
+        margin: 0;
+        margin-top: -18px;
+        font-family: 'Kelly Slab', cursive;
+        
+    }
+
+    .command > img {
+        max-height: 100px;
+    }
+
+    #searchBar {
+        width: 100%;
+        height: 32px;
+        border : none;
+        background: transparent;
+        outline: none;
+        padding: 5px 10px;
+        font-size: 12px;
+        font-family: 'Kelly Slab', cursive;
+        box-sizing: border-box;
+        border-radius: 8px;
+        color: #fff;
+        box-shadow: -4px -4px 10px rgba(0,0, 0, 1),
+        inset 4px 4px 10px rgba(255, 255, 255, 0.05),
+        inset -4px -4px 10px rgba(0,0, 0, 1),
+        inset 4px 4px 10px rgba(255, 255, 255, 0.05);
+
+    }
+
+    #searchWrapper {
+        position: relative;
+    }
+
+    #searchWrapper::after {
+        content: '🔍';
+        position: absolute;
+        top: 7px;
+        right: 15px;
+    }
+   
+@media (min-width:750px) {
+    h1
+    {
+        font-size: 50px;
+    }
+    .logo {
+    height: 300px;
+    width: 350px;
+    padding: auto;
+    margin: auto;
+   }
+}
+@media screen and (min-width: 220px) and (max-width: 320px) {
+      h1 {
+    font-size: 30px;
+   }
+   .logo {
+    height: 250px;
+    width: 250px;
+    padding: auto;
+    margin: auto;
+   }
+    
+}
+
+@media screen and (min-width: 350px) and (max-width: 380px) {
+      h1 {
+    font-size: 30px;
+   }
+   .logo {
+    height: 250px;
+    width: 250px;
+    padding: auto;
+    margin: auto;
+   }
+    
+}
+
+@media screen and (min-width: 381px) and (max-width: 430px) {
+    h1 {
+    font-size: 30px;
+   }
+   .logo {
+    height: 250px;
+    width: 250px;
+    padding: auto;
+    margin: auto;
+   }
+}
+
+@media screen and (min-width: 431px) and (max-width: 560px) {
+
+     h1 {
+    font-size: 30px;
+   }
+   .logo {
+    height: 250px;
+    width: 250px;
+    padding: auto;
+    margin: auto;
+   }
+
+}
+
+@media screen and (min-width: 560px) and (max-width: 770px) {
+      h1 {
+    font-size: 50px;
+   }
+  
+}
+
+@media (max-width:400px) {
+   h1 {
+    font-size: 30px;
+   }
+   .logo {
+    height: 250px;
+    width: 250px;
+    padding: auto;
+    margin: auto;
+   }
+}
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Rancho&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Rampart+One&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Kelly+Slab&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Graduate&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://satyenderyadav.github.io/volatilitycommand">
+<meta property="og:title" content="Volatility Command">
+<meta property="og:description" content="This project is a volatility command search engine.">
+<meta property="og:image" content="https://satyenderyadav.github.io/volatilitycommand/img/banner.png">
+
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://satyenderyadav.github.io/volatilitycommand">
+<meta property="twitter:title" content="Volatility Command">
+<meta property="twitter:description" content="This project is a volatility command search engine.">
+<meta property="twitter:image" content="https://satyenderyadav.github.io/volatilitycommand/img/banner.png">
+</head>
+<body>
+    <div class="container">
+        <img src="img/logo.png" class="logo">
+        <h1 style="font-family: 'Concert One', cursive;letter-spacing:1px ;padding: 0px !important;margin: 0px !important;padding-top: 30px !important;">VOLATILITY 2.x</h1>
+        <h1 style="font-family: 'Concert One', cursive;letter-spacing:1px ;padding: 0px !important;margin: 0px !important;">COMMANDS</h1>
+        <h2 style="font-family: 'Graduate';">Made with ❤️ by <a style="text-decoration: none;color: #fff;" target="_blank" href="https://twitter.com/thedeadpupil">Satyender Yadav</a></h2>
+        <div id="searchWrapper">
+            <input
+            type="text"
+            name="searchBar"
+            id="searchBar"
+            placeholder="search for a command "
+            />
+        </div>
+        <ul  id="commandList"></ul>
+    </div>
+</body>
+</html>
+
+
+
+<script>
+ function copyElementText(id) {
+    var text = document.getElementById(id).innerText;
+    var elem = document.createElement("textarea");
+    document.body.appendChild(elem);
+    elem.value = text;
+    elem.select();
+    document.getElementById(id + "-1").style.display = "inline";
+    document.execCommand("copy");
+    document.body.removeChild(elem);
+    setTimeout( function() {
+        document.getElementById(id + "-1").style.display = "none";
+    }, 1000);
+}
+const commandList = document.getElementById('commandList');
+const searchBar = document.getElementById('searchBar');
+let hpcommand = [];
+
+searchBar.addEventListener('keyup', (e) => {
+    const searchString = e.target.value.toLowerCase();
+    console.log(searchString);
+    if (searchString == '' || searchString == " "){
+        //pass
+    }
+    else{
+
+        const filteredcommand = hpcommand.filter((command) => {
+            return (
+                command.heading.toLowerCase().includes(searchString) ||
+                command.command.toLowerCase().includes(searchString) ||
+                command.about.toLowerCase().includes(searchString) ||
+                command.category.toLowerCase().includes(searchString) 
+                );
+        });
+        displaycommand1(filteredcommand);
+    }
+});
+
+const loadcommand = async () => {
+    try {
+        const res = await fetch('https://raw.githubusercontent.com/SatyenderYadav/volatilitycommand/main/data/data.json');
+        hpcommand = await res.json();
+        displaycommand(hpcommand);
+    } catch (err) {
+        console.error(err);
+    }
+};
+
+const displaycommand = (command) => {
+    const htmlString = command
+    .map((command) => {
+        return `
+        <li style="display:none;" class="command">
+        <h2>${command.heading}</h2>
+        <br><br>
+        <p>${command.category}</p>
+        <br><br>
+        <p>${command.about}</p>
+        <br><br>
+        <p>${command.command}</p>
+        </li>
+        `;
+    })
+    .join('');
+    commandList.innerHTML = htmlString;
+};
+
+const displaycommand1 = (command) => {
+    const htmlString = command
+    .map((command) => {
+        return `
+        <li  class="command">
+        <h2>${command.heading}</h2>
+        <br><br>
+        <p>${command.category}</p>
+        <br><br>
+        <p style="font-weight:600;font-family: 'Nanum Pen Script', cursive;font-size:20px">About:</p>
+        <br>
+        <p >${command.about}</p>
+        <br><br>
+        <p style="font-weight:600;font-family: 'Nanum Pen Script', cursive;font-size:20px">Command:</p>
+        <br>
+        <p id="${command.heading}" style="margin-bottom: 20px;" onclick="copyElementText(this.id)">${command.command} <img src="https://img.icons8.com/color/15/000000/copy--v1.png"/><span class="custom-tooltip" id="${command.heading}-1">copied!</sapn></p>
+        </li>
+        `;
+    })
+    .join('');
+    commandList.innerHTML = htmlString;
+};
+loadcommand();
+</script>

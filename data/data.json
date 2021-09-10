@@ -1,0 +1,344 @@
+[
+  {
+    "heading":"Imageinfo",
+    "command":"vol.py -f [sample] imageinfo",
+    "category":"Image Identification",
+    "about":"High level summary of the memory sample"
+  },
+  {
+    "heading":"kdbgscan",
+    "command":"vol.py -f [sample] --profile=Win2003SP2x64 kdbgscan",
+    "category":"Image Identification",
+    "about":"This plugin scans for the KDBGHeader signatures linked to Volatility profiles and applies sanity checks to reduce false positives"
+  },
+  {
+    "heading":"kpcrscan",
+    "command":"vol.py -f [sample] --profile=Win7SP1x64 kpcrscan",
+    "category":"Image Identification",
+    "about":"This command to scan for potential KPCR structures by checking for the self-referencing members"
+  },
+  {
+    "heading":"pslist",
+    "command":"vol.py -f [sample] --profile=Win7SP0x64 pslist",
+    "category":"Processes and DLLs",
+    "about":"To list the processes of a system"
+  },
+  {
+    "heading":"pstree",
+    "command":"vol.py -f [sample] --profile=Win7SP0x64 pstree",
+    "category":"Processes and DLLs",
+    "about":"To view the process listing in tree form"
+  },
+  {
+    "heading":"psscan",
+    "command":"vol.py -f [sample] --profile=Win7SP0x64 psscan",
+    "category":"Processes and DLLs",
+    "about":"To enumerate processes using pool tag scanning (POOL_HEADER)"
+  },
+  {
+    "heading":"dlllist",
+    "command":"vol.py -f [sample] --profile=Win7SP0x64 dlllist",
+    "category":"Processes and DLLs",
+    "about":"To display a process's loaded DLLs"
+  },
+  {
+    "heading":"dlldump",
+    "command":"vol.py -f [sample] --profile=Win7SP0x64 dlldump -D dlls/",
+    "category":"Processes and DLLs",
+    "about":"To extract a DLL from a process's memory space and dump it to disk for analysis"
+  },
+  {
+    "heading":"handles",
+    "command":"vol.py -f [sample] --profile=Win7SP0x64 handles",
+    "category":"Processes and DLLs",
+    "about":"To display the open handles in a process"
+  },
+  {
+    "heading":"getsids",
+    "command":"vol.py -f [sample] --profile=Win7SP0x64 getsids",
+    "category":"Processes and DLLs",
+    "about":"To view the SIDs (Security Identifiers) associated with a process"
+  },
+  {
+    "heading":"cmdscan",
+    "command":"vol.py -f [sample] --profile=VistaSP2x64 cmdscan",
+    "category":"Processes and DLLs",
+    "about":"The cmdscan plugin searches the memory of csrss.exe on XP/2003/Vista/2008 and conhost.exe on Windows 7 for commands that attackers entered through a console shell (cmd.exe)."
+  },
+  {
+    "heading":"consoles",
+    "command":"vol.py -f [sample] consoles",
+    "category":"Processes and DLLs",
+    "about":"The consoles plugin finds commands that attackers typed into cmd.exe or executed via backdoors"
+  },
+  {
+    "heading":"privs",
+    "command":"vol.py -f [sample] privs --profile=Win7SP0x64",
+    "category":"Processes and DLLs",
+    "about":"This plugin shows you which process privileges are present, enabled, and/or enabled by default"
+  },
+  {
+    "heading":"envars",
+    "command":"vol.py -f [sample] --profile=Win7SP0x64 envars",
+    "category":"Processes and DLLs",
+    "about":"To display a process's environment variables"
+  },
+  {
+    "heading":"verinfo",
+    "command":"vol.py --plugins=contrib/plugins/ -f [sample] --profile=Win7SP0x64 verinfo ",
+    "category":"Processes and DLLs",
+    "about":"To display the version information embedded in PE files"
+  },
+  {
+    "heading":"enumfunc",
+    "command":"vol.py --plugins=contrib/plugins/ -f [sample] --profile=Win7SP0x64 enumfunc",
+    "category":"Processes and DLLs",
+    "about":"This plugin enumerates imported and exported functions from processes, dlls, and kernel drivers. Specifically, it handles functions imported by name or ordinal, functions exported by name or ordinal, and forwarded exports"
+  },
+  {
+    "heading":"memmap",
+    "command":"vol.py -f [sample] --profile=Win7SP0x64 memmap",
+    "category":"Process Memory",
+    "about":"The memmap command shows you exactly which pages are memory resident, given a specific process DTB (or kernel DTB if you use this plugin on the Idle or System process)"
+  },
+  {
+    "heading":"memdump",
+    "command":"vol.py -f [sample] --profile=Win7SP0x64 memdump -p 4 -D dump/",
+    "category":"Process Memory",
+    "about":"To extract all memory resident pages in a process (see memmap for details) into an individual file, use the memdump command"
+  },
+  {
+    "heading":"procmemdump",
+    "command":"vol.py -f [sample] --profile=Win7SP0x64 procmemdump -D dump/ -p 296 ",
+    "category":"Process Memory",
+    "about":"To dump a process's executable (including the slack space), use the procmemdump command"
+  },
+  {
+    "heading":"vadinfo",
+    "command":"ython vol.py -f [sample] --profile=Win7SP0x64 vadinfo -p 296 ",
+    "category":"Process Memory",
+    "about":"The vadinfo command displays extended information about a process's VAD nodes"
+  },
+  {
+    "heading":"vadwalk",
+    "command":"vol.py -f [sample] --profile=Win7SP0x64 vadwalk -p 296",
+    "category":"Process Memory",
+    "about":"To inspect a process's VAD nodes in table form"
+  },
+  {
+    "heading":"vadtree",
+    "command":"vol.py -f [sample] --profile=Win7SP0x64 vadtree -p 296",
+    "category":"Process Memory",
+    "about":"To display the VAD nodes in a visual tree form"
+  },
+  {
+    "heading":"vaddump",
+    "command":"vol.py -f [sample] --profile=Win7SP0x64 vaddump -D vads",
+    "category":"Process Memory",
+    "about":"To extract the range of pages described by a VAD node"
+  },
+  {
+    "heading":"evtlogs",
+    "command":"vol.py -f [sample] --profile=WinXPSP2x64 evtlogs -D output",
+    "category":"Process Memory",
+    "about":"The evtlogs command extracts and parses binary event logs from memory"
+  },
+  {
+    "heading":"iehistory",
+    "command":"vol.py -f [sample] iehistory",
+    "category":"Process Memory",
+    "about":"This plugin recovers fragments of IE history index.dat cache files"
+  },
+  {
+    "heading":"modules",
+    "command":"vol.py -f [sample] --profile=Win7SP0x64 modules",
+    "category":"Kernel Memory and Objects",
+    "about":"To view the list of kernel drivers loaded on the system"
+  },
+  {
+    "heading":"modscan",
+    "command":"vol.py -f [sample] --profile=Win7SP0x64 modscan",
+    "category":"Kernel Memory and Objects",
+    "about":"The modscan command finds LDR_DATA_TABLE_ENTRY structures by scanning physical memory for pool tags"
+  },
+  {
+    "heading":"moddump",
+    "command":"vol.py -f [sample] --profile=Win7SP0x64 moddump -D drivers/",
+    "category":"Kernel Memory and Objects",
+    "about":"To extract a kernel driver to a file"
+  },
+  {
+    "heading":"ssdt",
+    "command":"vol.py -f [sample] --profile=Win7SP0x64 ssdt",
+    "category":"Kernel Memory and Objects",
+    "about":"To list the functions in the Native and GUI SSDTs"
+  },
+  {
+    "heading":"driverscan",
+    "command":"vol.py -f [sample] --profile=Win7SP0x64 driverscan",
+    "category":"Kernel Memory and Objects",
+    "about":"To find DRIVER_OBJECTs in physical memory using pool tag scanning"
+  },
+  {
+    "heading":"filescan",
+    "command":"vol.py -f [sample] --profile=Win7SP0x64 filescan",
+    "category":"Kernel Memory and Objects",
+    "about":"To find FILE_OBJECTs in physical memory using pool tag scanning"
+  },
+  {
+    "heading":"mutantscan",
+    "command":"vol.py -f [sample] --profile=Win7SP0x64 mutantscan --silent",
+    "category":"Kernel Memory and Objects",
+    "about":"To scan physical memory for KMUTANT objects with pool tag scanning"
+  },
+  {
+    "heading":"symlinkscan",
+    "command":"vol.py -f [sample] --profile=Win7SP0x64 symlinkscan",
+    "category":"Kernel Memory and Objects",
+    "about":"This plugin scans for symbolic link objects and outputs their information"
+  },
+  {
+    "heading":"thrdscan",
+    "command":"vol.py -f [sample] --profile=Win7SP0x64 thrdscan",
+    "category":"Kernel Memory and Objects",
+    "about":"To find ETHREAD objects in physical memory with pool tag scanning"
+  },
+  {
+    "heading":"dumpfiles",
+    "command":"vol.py -f [sample] dumpfiles -Q 0x8217beb0684 -D output",
+    "category":"Kernel Memory and Objects",
+    "about":"Files are cached in memory for system performance as they are accessed and used.We are able to retrieve files that were in use correctly, instead of file carving"
+  },
+  {
+    "heading":"unloadedmodules",
+    "command":"vol.py -f [sample] unloadedmodules --profile=Win7SP0x64",
+    "category":"Kernel Memory and Objects",
+    "about":"Windows stores information on recently unloaded drivers for debugging purposes"
+  },
+  {
+    "heading":"connections",
+    "command":"vol.py -f [sample] --profile=Win2003SP2x64 connections",
+    "category":"Networking",
+    "about":"To view TCP connections that were active at the time of the memory acquisition"
+  },
+  {
+    "heading":"connscan",
+    "command":"vol.py -f [sample] --profile=Win2003SP2x64 connscan",
+    "category":"Networking",
+    "about":"To find _TCPT_OBJECT structures using pool tag scanning"
+  },
+  {
+    "heading":"sockets",
+    "command":"vol.py -f [sample] --profile=Win2003SP2x64 sockets",
+    "category":"Networking",
+    "about":"To detect listening sockets for any protocol (TCP, UDP, RAW, etc)"
+  },
+  {
+    "heading":"sockscan",
+    "command":"vol.py -f [sample] --profile=Win2003SP2x64 sockscan",
+    "category":"Networking",
+    "about":"To find _ADDRESS_OBJECT structures using pool tag scanning"
+  },
+  {
+    "heading":"netscan",
+    "command":"vol.py -f [sample] --profile=Win7SP0x64 netscan",
+    "category":"Networking",
+    "about":"To scan for network artifacts in 32- and 64-bit Windows Vista, Windows 2008 Server and Windows 7 memory dumps"
+  },
+  {
+    "heading":"hivescan",
+    "command":"vol.py -f [sample] --profile=Win7SP0x64 hivescan",
+    "category":"Registry",
+    "about":"To find the physical addresses of CMHIVEs (registry hives) in memory"
+  },
+  {
+    "heading":"hivelist",
+    "command":"vol.py -f [sample] --profile=Win7SP0x64 hivelist",
+    "category":"Registry",
+    "about":"To locate the virtual addresses of registry hives in memory, and the full paths to the corresponding hive on disk"
+  },
+  {
+    "heading":"printkey",
+    "command":"vol.py -f [sample] --profile=Win7SP0x64 printkey -K 'Microsoft\\Security Center\\Svc' ",
+    "category":"Registry",
+    "about":"To display the subkeys, values, data, and data types contained within a specified registry key"
+  },
+  {
+    "heading":"hivedump",
+    "command":"vol.py -f [sample] --profile=Win7SP0x64 hivedump -o 0xfffff8a000a15010",
+    "category":"Registry",
+    "about":"To recursively list all subkeys in a hive"
+  },
+  {
+    "heading":"hashdump",
+    "command":"vol.py hashdump -f [sample] ",
+    "category":"Registry",
+    "about":"To extract and decrypt cached domain credentials stored in the registry"
+  },
+  {
+    "heading":"lsadump",
+    "command":"vol.py -f [sample] lsadump",
+    "category":"Registry",
+    "about":"To dump LSA secrets from the registry"
+  },
+  {
+    "heading":"userassist",
+    "command":"vol.py -f [sample] --profile=Win7SP0x86 userassist",
+    "category":"Registry",
+    "about":"To get the UserAssist keys from a sample"
+  },
+  {
+    "heading":"mftparser",
+    "command":" vol.py -f [sample] mftparser",
+    "category":"File System",
+    "about":"This plugin scans for potential Master File Table (MFT) entries in memory (using 'FILE' and 'BAAD' signatures) and prints out information for certain attributes, currently: $FILE_NAME ($FN), $STANDARD_INFORMATION ($SI), $FN and $SI attributes from the $ATTRIBUTE_LIST, $OBJECT_ID (default output only) and resident $DATA (default output only)"
+  },
+  {
+    "heading":"mbrparser",
+    "command":"vol.py -f [sample] mbrparser -H",
+    "category":"File System",
+    "about":"Scans for and parses potential Master Boot Records (MBRs)"
+  },
+  {
+    "heading":"crashinfo",
+    "command":"vol.py -f [sample] --profile=Win7SP0x64 crashinfo",
+    "category":"Crash Dumps, Hibernation, and Conversion",
+    "about":"Information from the crashdump header can be printed"
+  },
+  {
+    "heading":"hibinfo",
+    "command":"vol.py -f hiberfil.sys --profile=Win7SP1x64 hibinfo",
+    "category":"Crash Dumps, Hibernation, and Conversion",
+    "about":"The hibinfo command reveals additional information stored in the hibernation file, including the state of the Control Registers, such as CR0, etc"
+  },
+  {
+    "heading":"imagecopy",
+    "command":"vol.py -f [sample] --profile=Win7SP0x64 imagecopy -O copy.raw",
+    "category":"Crash Dumps, Hibernation, and Conversion",
+    "about":"The imagecopy command allows you to convert any existing type of address space (such as a crashdump, hibernation file, virtualbox core dump, vmware snapshot, or live firewire session) to a raw memory image"
+  },
+  {
+    "heading":"raw2dmp",
+    "command":"vol.py -f [sample] --profile=Win7SP0x64 raw2dmp -O copy.dmp",
+    "category":"Crash Dumps, Hibernation, and Conversion",
+    "about":"To convert a raw memory dump (for example from a win32dd acquisition or a VMware .vmem file) into a Microsoft crash dump"
+  },
+  {
+    "heading":"vboxinfo",
+    "command":"vol.py -f [sample] --profile=Win7SP1x64 vboxinfo ",
+    "category":"Crash Dumps, Hibernation, and Conversion",
+    "about":"To pull details from a virtualbox core dump"
+  },
+  {
+    "heading":"vmwareinfo",
+    "command":"vol.py -f [sample] vmwareinfo --verbose",
+    "category":"Crash Dumps, Hibernation, and Conversion",
+    "about":"Use this plugin to analyze header information from vmware saved state (vmss) or vmware snapshot (vmsn) files"
+  },
+  {
+    "heading":"hpakinfo",
+    "command":"vol.py -f memdump.hpak hpakinfo",
+    "category":"Crash Dumps, Hibernation, and Conversion",
+    "about":"This plugin shows info from an hpak formatted memory dump created by FDPro.exe"
+  }
+]
